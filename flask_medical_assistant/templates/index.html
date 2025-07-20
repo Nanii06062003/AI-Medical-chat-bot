@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Medical Assistant</h1>
+        </header>
+        <div class="feature-grid">
+            <!-- Folder 1: Upload a photo for medical assistance -->
+            <div class="folder-box" onclick="location.href='{{ url_for('upload_image') }}'">
+                <span>Upload a Photo</span>
+            </div>
+
+            <!-- Folder 2: Select symptoms to predict disease -->
+            <div class="folder-box" onclick="location.href='{{ url_for('symptoms') }}'">
+                <span>Predict Disease</span>
+            </div>
+
+            <!-- Folder 3: Search for medicine details -->
+            <div class="folder-box" onclick="location.href='{{ url_for('medicine') }}'">
+                <span>Medicine Details</span>
+            </div>
+
+            <!-- Folder 4: Chat with the medical assistant bot -->
+            <div class="folder-box" onclick="location.href='{{ url_for('chatbot') }}'">
+                <span>Chat with Assistant</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

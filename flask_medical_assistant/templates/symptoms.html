@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Symptoms</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #4CAF50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        form {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 8px;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Add responsiveness */
+        @media (max-width: 500px) {
+            form {
+                padding: 15px;
+                max-width: 90%;
+            }
+
+            button {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Select Symptoms to Predict Disease</h1>
+    <form action="{{ url_for('symptoms') }}" method="post">
+        <p>Select from the following symptoms:</p>
+        <label><input type="checkbox" name="symptoms" value="fever"> Fever</label>
+        <label><input type="checkbox" name="symptoms" value="cough"> Cough</label>
+        <label><input type="checkbox" name="symptoms" value="rash"> Rash</label>
+        <label><input type="checkbox" name="symptoms" value="itching"> Itching</label>
+        <label><input type="checkbox" name="symptoms" value="headache"> Headache</label>
+        <label><input type="checkbox" name="symptoms" value="nausea"> Nausea</label>
+        <label><input type="checkbox" name="symptoms" value="chest_pain"> Chest Pain</label>
+        <label><input type="checkbox" name="symptoms" value="shortness_of_breath"> Shortness of Breath</label>
+        <label><input type="checkbox" name="symptoms" value="fatigue"> Fatigue</label>
+        <label><input type="checkbox" name="symptoms" value="joint_pain"> Joint Pain</label>
+        <!-- Add more symptoms as needed -->
+        
+        <p>Or, enter custom symptoms separated by commas:</p>
+        <input type="text" name="custom_symptoms" placeholder="e.g., sneezing, dizziness">
+        
+        <button type="submit">Predict Disease</button>
+    </form>
+</body>
+</html>
